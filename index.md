@@ -8,8 +8,30 @@ Link to the test file for a failure-inducing input that prompted you to make tha
 Show the symptom of that failure-inducing input by showing the output of running the file at the command line for the version where it was failing (this should also be in the commit message history)
 Write 2-3 sentences describing the relationship between the bug, the symptom, and the failure-inducing input.
 
+---
+
 **Problem 1: Having parenthesis with no brackets before it will make it loop infinitely**
 
+*WHY?* The `indexOf` function returns -1 if it doesn't find its target, causing the search to loop through the file infinitely. When there no brackets after a pair of parenthesis, the program will run into an infinite loop.
+
+*Solution:* We can fix it by adding if statements to check and make sure the program does not continue if any searches result in -1. We add the if statements after searching for brackets and after searching for parenthesis, checking if either fail.
+
+*Symptom:* In the command line, the output is infinitly waiting.
+
+*Failure-inducing file:* [link is here](failure-test1.md)
+
+![image](Image/code1.png)
+
 **Problem 2: Having no parentheses leads to an IndexOutOfBoundsException**
+
+*WHY?* The `indexOf` function returns -1 if it doesn't find its target, causing the search to loop through the file infinitely. When there no brackets after a pair of parenthesis, the program will run into an infinite loop.
+
+*Solution:* We can fix it by adding if statements to check and make sure the program does not continue if any searches result in -1. We add the if statements after searching for brackets and after searching for parenthesis, checking if either fail.
+
+*Symptom:* In the command line, the output is infinitly waiting.
+
+*Failure-inducing file:* [link is here](failure-test1.md)
+
+![image](Image/code1.png)
 
 **Problem 3: Using an image will have the program mistake the image for a link**
