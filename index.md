@@ -24,6 +24,8 @@ Write 2-3 sentences describing the relationship between the bug, the symptom, an
 
 ![image](Image/code1.png)
 
+---
+
 **Problem 2: Having no parentheses leads to an IndexOutOfBoundsException**
 
 *WHY?* The program will interpret any set of parenthesis following any set of brackets as a link when it should not. 
@@ -36,4 +38,17 @@ Write 2-3 sentences describing the relationship between the bug, the symptom, an
 
 ![image](Image/code2.png)
 
+---
+
 **Problem 3: Using an image will have the program mistake the image for a link**
+
+*WHY?* Image notation has an exclamation mark in front of the brackets, but everything else is the same as the link notation. If you do not check teh exclamation mark, you will add image links to the result list.
+
+*Solution:* We can fix it by first checking the open bracket is not the first character in the text, and then we can check if the character before the next open bracket is an exclamation mark. If yes, add the link to the result list. 
+
+*Symptom:* In the command line, the output might be an image link, which is not the link.
+
+*Failure-inducing file:* [link is here](failure-test3.md)
+
+![image](Image/code3.png)
+
