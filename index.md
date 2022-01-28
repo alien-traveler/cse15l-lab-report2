@@ -34,6 +34,8 @@ Write 2-3 sentences describing the relationship between the bug, the symptom, an
 
 *Symptom:* In the command line, the output might be something that is not the link.
 
+*Failure-inducing input:* when a bracket and a parenthesis are not right next to each other 
+
 *Failure-inducing file:* [link is here](failure-test2.md)
 
 ![image](Image/code2.png)
@@ -47,6 +49,8 @@ Write 2-3 sentences describing the relationship between the bug, the symptom, an
 *Solution:* We can fix it by first checking the open bracket is not the first character in the text, and then we can check if the character before the next open bracket is an exclamation mark. If yes, add the link to the result list. 
 
 *Symptom:* In the command line, the output might be an image link, which is not the link.
+
+*Failure-inducing input:* when an image link is in the file while there is not a link notation.
 
 *Failure-inducing file:* [link is here](failure-test3.md)
 
