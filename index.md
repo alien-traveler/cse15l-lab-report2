@@ -12,11 +12,13 @@ Write 2-3 sentences describing the relationship between the bug, the symptom, an
 
 **Problem 1: Having parenthesis with no brackets before it will make it loop infinitely**
 
-*WHY?* The `indexOf` function returns -1 if it doesn't find its target, causing the search to loop through the file infinitely. When there no brackets after a pair of parenthesis, the program will run into an infinite loop.
+*WHY?* The `indexOf` function returns -1 if it doesn't find its target, causing the search to loop through the file infinitely. 
 
 *Solution:* We can fix it by adding if statements to check and make sure the program does not continue if any searches result in -1. We add the if statements after searching for brackets and after searching for parenthesis, checking if either fail.
 
 *Symptom:* In the command line, the output is infinitly waiting.
+
+*Failure-inducing input:* When there no brackets after a pair of parenthesis, the program will run into an infinite loop.
 
 *Failure-inducing file:* [link is here](failure-test1.md)
 
@@ -24,14 +26,14 @@ Write 2-3 sentences describing the relationship between the bug, the symptom, an
 
 **Problem 2: Having no parentheses leads to an IndexOutOfBoundsException**
 
-*WHY?* The `indexOf` function returns -1 if it doesn't find its target, causing the search to loop through the file infinitely. When there no brackets after a pair of parenthesis, the program will run into an infinite loop.
+*WHY?* The program will interpret any set of parenthesis following any set of brackets as a link when it should not. 
 
-*Solution:* We can fix it by adding if statements to check and make sure the program does not continue if any searches result in -1. We add the if statements after searching for brackets and after searching for parenthesis, checking if either fail.
+*Solution:* We can fix it by adding if statements to check if the element before the openbracket is the next closed bracket. Only append the string in the parenthesis to the result list if this statement returns true.
 
-*Symptom:* In the command line, the output is infinitly waiting.
+*Symptom:* In the command line, the output might be something that is not the link.
 
-*Failure-inducing file:* [link is here](failure-test1.md)
+*Failure-inducing file:* [link is here](failure-test2.md)
 
-![image](Image/code1.png)
+![image](Image/code2.png)
 
 **Problem 3: Using an image will have the program mistake the image for a link**
